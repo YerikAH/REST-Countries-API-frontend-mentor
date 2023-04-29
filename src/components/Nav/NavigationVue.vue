@@ -1,14 +1,23 @@
 <script setup lang="ts">
-import {IconMoon} from '@tabler/icons-vue'
+import { changeTheme, theme } from '@/store/store'
+import { IconMoon } from '@tabler/icons-vue'
+import { PathApp } from '../../enum/enum'
+
+const handleClick = () => {
+  changeTheme()
+}
+
 </script>
 
 <template>
-  <header class="header">
+  <header class="header" :id="theme">
     <nav class="header_nav">
       <ul class="nav_ul">
-        <li><a href="#" tabindex="1">Where in the world?</a></li>
+        <li><RouterLink :to="PathApp.main" tabindex="1" class="ul_link">Where in the world?</RouterLink></li>
         <li>
-          <button tabindex="1"><IconMoon /> Dark mode</button>
+          <button tabindex="1" class="ul_button" @click="handleClick">
+            <IconMoon /> Dark mode
+          </button>
         </li>
       </ul>
     </nav>
@@ -16,7 +25,23 @@ import {IconMoon} from '@tabler/icons-vue'
 </template>
 
 <style scoped>
+#dark {
+  background-color: var(--very-dark-blue-text);
+}
+#dark a {
+  color: var(--white);
+}
+#dark button {
+  color: var(--white);
+}
+#dark svg {
+  fill: var(--white);
+  stroke: var(--white);
+}
+
 .header {
+  transition: 0.3s;
+  transition-timing-function: cubic-bezier(0.48, 0.25, 0.14, 0.91);
   display: grid;
   width: 100%;
   place-items: center;
@@ -47,6 +72,13 @@ import {IconMoon} from '@tabler/icons-vue'
   padding: 0.5rem 1rem;
   color: var(--very-dark-blue-text);
 }
+svg {
+  stroke-width: 1.5;
+  stroke: var(--very-dark-blue-text);
+  transition: 0.3s;
+  transition-timing-function: cubic-bezier(0.48, 0.25, 0.14, 0.91);
+}
+
 @media (min-width: 720px) {
   .nav_ul button {
     font: normal normal 600 1rem/1.2rem var(--font-primary);
