@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import CountryCard from './CountryCard.vue'
-import {getAllData, data} from '../../../store/store'
+import {getAllData, data} from '../../../../store/store'
 getAllData()
 </script>
 

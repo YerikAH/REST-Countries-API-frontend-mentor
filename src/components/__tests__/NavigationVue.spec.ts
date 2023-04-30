@@ -1,5 +1,5 @@
 import { mount, VueWrapper } from '@vue/test-utils'
-import NavigationVue from '../Nav/NavigationVue.vue'
+import NavigationVue from '../Home/Nav/NavigationVue.vue'
 import { describe, it, expect, beforeEach, afterEach } from 'vitest'
 import { PathApp, ThemeApp } from '@/enum/enum'
 

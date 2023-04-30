@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FILTER_OPTIONS } from '../../../constant/constant'
+import { FILTER_OPTIONS } from '../../../../constant/constant'
 </script>
 <template>
   <div class="filter_options">

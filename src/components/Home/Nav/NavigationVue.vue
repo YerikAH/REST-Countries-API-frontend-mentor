@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { changeTheme, theme } from '@/store/store'
+import { changeTheme, theme } from '../../../store/store'
 import { IconMoon } from '@tabler/icons-vue'
-import { PathApp } from '../../enum/enum'
+import { PathApp } from '../../../enum/enum'
 
 const handleClick = () => {
   changeTheme()

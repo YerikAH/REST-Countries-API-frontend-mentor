@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {computed} from 'vue';
-import type { Country } from '../../../interface/data'
+import type { Country } from '../../../../interface/data'
 
 const props = defineProps({
   data: { type: Object as () => Country, required: true }

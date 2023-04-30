@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import NavigationVue from '../components/Nav/NavigationVue.vue'
-import MainVue from '../components/Main/MainVue.vue'
+import NavigationVue from '../components/Home/Nav/NavigationVue.vue'
+import MainVue from '../components/Home/Main/MainVue.vue'
 
 </script>
 
