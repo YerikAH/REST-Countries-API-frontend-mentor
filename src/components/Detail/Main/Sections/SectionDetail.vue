@@ -8,4 +8,16 @@ import DetailCountryImage from '../ui/DetailCountryImage.vue'
     <DetailCountryText />
   </section>
 </template>
-<style scoped></style>
+<style scoped>
+.detail_country{
+  max-width: 1228px;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+@media (min-width: 720px) {
+  .detail_country{
+    grid-template-columns: repeat(2, 50%);
+  }	
+}
+</style>

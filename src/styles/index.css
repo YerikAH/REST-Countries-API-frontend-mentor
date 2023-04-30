@@ -19,6 +19,8 @@ html {
 }
 body {
   background-color: var(--very-light-gray);
+  transition: 0.3s;
+  transition-timing-function: cubic-bezier(0.48, 0.25, 0.14, 0.91);
 }
 #dark {
   background-color: var(--very-dark-blue-bg);
