@@ -1,31 +1,12 @@
 <script setup lang="ts">
 import CountryCard from './CountryCard.vue'
+import {getAllData, data} from '../../../store/store'
+getAllData()
 </script>
 
 <template>
   <div class="cards">
-    <CountryCard />
-    <CountryCard />
-    <CountryCard />
-    <CountryCard />
-    <CountryCard />
-    <CountryCard />
-    <CountryCard />
-    <CountryCard />
-    <CountryCard />
-    <CountryCard />
-    <CountryCard />
-    <CountryCard />
-    <CountryCard />
-    <CountryCard />
-    <CountryCard />
-    <CountryCard />
-    <CountryCard />
-    <CountryCard />
-    <CountryCard />
-    <CountryCard />
-    <CountryCard />
-    <CountryCard />
+    <CountryCard v-for="(country ,idx) in data.data" :key="idx" :data="country"/>
   </div>
 </template>
 <style scoped>
