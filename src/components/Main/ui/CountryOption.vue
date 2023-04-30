@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { IconSearch, IconChevronDown} from '@tabler/icons-vue'
+import FilterRegion from '../Modals/FilterRegion.vue'
+import {ref} from 'vue';
+const open = ref(false)
 </script>
 
 <template>
@@ -10,6 +13,7 @@ import { IconSearch, IconChevronDown} from '@tabler/icons-vue'
     </div>
     <button class="select_country">
       <span>Filter by Region</span> <span><IconChevronDown :size="16"/></span>
+      <FilterRegion v-show="open"/>
     </button>
   </div>
 </template>
@@ -38,7 +42,7 @@ import { IconSearch, IconChevronDown} from '@tabler/icons-vue'
   align-items: start;
   justify-content: start;
   gap: 2rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
   flex-direction: column;
 }
 .search_country{
@@ -77,6 +81,7 @@ import { IconSearch, IconChevronDown} from '@tabler/icons-vue'
   left: 1.2rem;
 }
 .select_country{
+  position: relative;
   transition: 0.3s;
   transition-timing-function: cubic-bezier(0.48, 0.25, 0.14, 0.91);
   display: flex;

@@ -47,6 +47,7 @@ const handleClick = () => {
   place-items: center;
   padding: 1.5rem 1rem;
   box-shadow: 0px 0px 4px 4px #0002;
+  background-color: var(--white);
 }
 .header_nav {
   width: 100%;

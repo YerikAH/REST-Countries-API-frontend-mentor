@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import { theme } from '@/store/store'
 import SectionsVue from './Sections/SectionsVue.vue'
+import { onMounted, watch } from 'vue';
+onMounted(() => {
+  document.body.setAttribute('id', theme.value)
+})
+watch(theme, () => {
+  document.body.setAttribute('id', theme.value)
+})
 </script>
 
 <template>
@@ -16,8 +23,7 @@ import SectionsVue from './Sections/SectionsVue.vue'
   flex-direction: column;
   width: 100%;
   background-color: var(--very-light-gray);
-  height: 100vh;
-  overflow: auto;
+  overflow: hidden;
   padding: 0 1rem;
   transition: 0.3s;
   transition-timing-function: cubic-bezier(0.48, 0.25, 0.14, 0.91);
