@@ -26,7 +26,7 @@ const handleClick = () => {
 
 <style scoped>
 #dark {
-  background-color: var(--very-dark-blue-text);
+  background-color: var(--dark-blue);
 }
 #dark a {
   color: var(--white);

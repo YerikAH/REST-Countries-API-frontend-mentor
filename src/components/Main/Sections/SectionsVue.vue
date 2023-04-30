@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import CountryOption from '../ui/CountryOption.vue'
+import CardsVue from '../ui/CardsVue.vue'
 </script>
 
 <template>
   <section class="section_show_country">
     <CountryOption/>
+    <CardsVue/>
   </section>
 </template>
 <style scoped>
