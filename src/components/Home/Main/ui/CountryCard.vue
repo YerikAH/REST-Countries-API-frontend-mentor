@@ -32,7 +32,7 @@ const populationSeparate = computed(()=>{
 })
 </script>
 <template>
-  <div class="card_country">
+  <RouterLink class="card_country" :to="`/country/${data.name.common}`" >
     <img :src="data.flags.png" alt="country" />
     <div class="country_info">
       <h5 class="info_name">{{ props.data.name.common }}</h5>
@@ -49,7 +49,7 @@ const populationSeparate = computed(()=>{
         <p>{{ capitalDefined }}</p>
       </span>
     </div>
-  </div>
+  </RouterLink>
 </template>
 <style scoped>
 #dark .card_country {

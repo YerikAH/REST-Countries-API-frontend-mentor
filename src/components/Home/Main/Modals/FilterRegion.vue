@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { FILTER_OPTIONS } from '../../../../constant/constant'
+import { filterByRegion } from '../../../../store/store'
+const handleClick = ( region: string) => filterByRegion(region)
 </script>
 <template>
   <div class="filter_options">
-    <button class="option" v-for="option in FILTER_OPTIONS" :key="option.id">
+    <button class="option" v-for="option in FILTER_OPTIONS" :key="option.id" @click="()=>handleClick(option.word_clave)">
       {{ option.name }}
     </button>
   </div>
@@ -34,6 +36,11 @@ import { FILTER_OPTIONS } from '../../../../constant/constant'
   background-color: transparent;
   border: none;
   font: normal normal 600 0.8rem/1rem var(--font-primary);
+  transition: 0.3s;
+  &:hover{
+    color: red;
+    background-color: var(--black-10);
+  }
 }
 
 </style>

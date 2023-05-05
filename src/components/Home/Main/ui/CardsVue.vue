@@ -21,6 +21,7 @@ getAllData()
 }
 @media (min-width: 720px) {
   .cards {
+    margin-top: 3rem;
     justify-content: space-between;
   }
 }

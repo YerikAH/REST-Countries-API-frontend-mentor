@@ -1,17 +1,22 @@
 <script setup lang="ts">
+import { getSearchData } from '../../../../store/store'
 import { IconSearch, IconChevronDown} from '@tabler/icons-vue'
 import FilterRegion from '../Modals/FilterRegion.vue'
 import {ref} from 'vue';
 const open = ref(false)
+const inputText = ref('')
+const handleInput = () => getSearchData(inputText.value)
+const handleClick = () => open.value = !open.value
+
 </script>
 
 <template>
   <div class="country_option">
     <div class="search_country">
       <button class="search_country_button"><IconSearch :size="18" color="#848484" /></button>
-      <input type="text"  placeholder="Search for a country..."/>
+      <input type="text" v-model="inputText" @input="handleInput"  placeholder="Search for a country..."/>
     </div>
-    <button class="select_country">
+    <button class="select_country" @click="handleClick">
       <span>Filter by Region</span> <span><IconChevronDown :size="16"/></span>
       <FilterRegion v-show="open"/>
     </button>
@@ -100,6 +105,9 @@ const open = ref(false)
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+  }
+  .country_option {
+    margin-top: 3rem;
   }
 }
 </style>

@@ -1,12 +1,18 @@
-<script setup lang="ts">
-import { IconArrowLeft } from '@tabler/icons-vue'
-import { RouterLink } from 'vue-router'
-</script>
+<script setup lang="ts"></script>
 <template>
   <div class="detail_country_one">
-    <div class="detail_country_one_button">
-      <RouterLink to="/"> <IconArrowLeft /> Back</RouterLink>
-    </div>
-    <img src="" alt="country" class="detail_country_one_image" />
+    <img src="https://flagcdn.com/w320/pk.png" alt="country" class="detail_country_one_image" />
   </div>
 </template>
+<style scoped>
+.detail_country_one {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+.detail_country_one_image {
+  width: 100%;
+  max-width: 37.5rem;
+  object-fit: cover;
+}
+</style>
