@@ -10,7 +10,7 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/country',
+      path: '/country/:countryName',
       name: 'country',
       component: CountryView
     }

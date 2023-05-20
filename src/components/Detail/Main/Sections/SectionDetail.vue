@@ -3,6 +3,13 @@ import DetailCountryText from '../ui/DetailCountryText.vue'
 import DetailCountryImage from '../ui/DetailCountryImage.vue'
 import { IconArrowNarrowLeft } from '@tabler/icons-vue'
 import { RouterLink } from 'vue-router'
+import { useRoute } from 'vue-router'
+import { getCountryData} from '../../../../store/store'
+
+const route = useRoute()
+const validate = Array.isArray(route.params.countryName)
+if (!validate) getCountryData(route.params.countryName as string)
+
 </script>
 <template>
   <section>
@@ -16,8 +23,7 @@ import { RouterLink } from 'vue-router'
   </section>
 </template>
 <style scoped>
-
-#dark .detail_country_one_button a{
+#dark .detail_country_one_button a {
   color: var(--white);
   background-color: var(--dark-blue);
   box-shadow: 0px 0px 4px 0px #fff1;
@@ -59,7 +65,7 @@ section {
     font-size: 1rem;
   }
 }
-@media (min-width: 1024px)  {
+@media (min-width: 1024px) {
   .detail_country {
     grid-template-columns: repeat(2, 50%);
   }

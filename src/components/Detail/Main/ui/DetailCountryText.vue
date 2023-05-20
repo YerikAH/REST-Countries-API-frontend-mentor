@@ -1,16 +1,15 @@
 <script setup lang="ts">
 import CountryBoxGrid from './CountryBoxGrid.vue'
+import { countryData } from '@/store/store';
 </script>
 <template>
   <div class="detail_country_two">
-    <h2>Belgium</h2>
+    <h2>{{ countryData.data[0].name.common }}</h2>
     <CountryBoxGrid />
     <div class="detail_country_two_boxflex">
       <p>Border Countries:</p>
       <div class="box_flex_buttons">
-        <button>France</button>
-        <button>Germany</button>
-        <button>Netherlands</button>
+	<button v-for="item in countryData.data[0].borders" :key="item">{{ item }}</button>
       </div>
     </div>
   </div>

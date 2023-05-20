@@ -1,25 +1,32 @@
+<script setup lang="ts">
+import {populationSeparate} from '@/helpers/helpers';
+import {countryData} from '@/store/store';
+import {ref} from 'vue';
+const country = ref(countryData.data[0])
+</script>
+
 <template>
   <div class="detail_country_two_boxgrid">
     <div class="boxgrid_one grid">
       <span class="boxgrid_types">
         <b>Native Name:</b>
-        <p>Belgie</p>
+        <p>{{ country.name.nativeName ?? 'No Native Name'}}</p>
       </span>
       <span class="boxgrid_types">
         <b>Population:</b>
-        <p>11,319,511</p>
+        <p>{{ populationSeparate(country.population) }}</p>
       </span>
       <span class="boxgrid_types">
         <b>Region:</b>
-        <p>Europe</p>
+        <p>{{ country.region }}</p>
       </span>
       <span class="boxgrid_types">
         <b>Sub Region:</b>
-        <p>Western Europe</p>
+        <p>{{ country.subregion }}</p>
       </span>
       <span class="boxgrid_types">
         <b>Capital:</b>
-        <p>Burssels</p>
+	<p>BurW</p>
       </span>
     </div>
     <div class="boxgrid_two grid">

@@ -1,34 +1,9 @@
 <script setup lang="ts">
 import {computed} from 'vue';
 import type { Country } from '../../../../interface/data'
-
+import { populationSeparate, capitalDefined } from '../../../../helpers/helpers'
 const props = defineProps({
   data: { type: Object as () => Country, required: true }
-})
-const capitalDefined = computed(()=>{
-  const capital: string | undefined = props.data.capital?.[0]
-  if(capital === undefined){
-    return 'Has no capital'
-  }else{
-    return capital
-  }  
-})
-const populationSeparate = computed(()=>{
-  const numberToArray = props.data.population.toString().split('').reverse()
-  let newArray = []
-  for(let i=0; i<numberToArray.length; i++){
-    const item = numberToArray[i]
-    newArray.push(item) 
-    if((i + 1) % 3 === 0){
-      newArray.push(',')
-    }
-  }
-  if(numberToArray.length % 3 === 0){
-    newArray.reverse().shift()
-    return newArray.join('')
-  }else{
-    return newArray.reverse().join('')
-  }
 })
 </script>
 <template>
@@ -38,7 +13,7 @@ const populationSeparate = computed(()=>{
       <h5 class="info_name">{{ props.data.name.common }}</h5>
       <span class="info_types">
         <b>Population: </b>
-        <p>{{ populationSeparate }}</p>
+        <p>{{ populationSeparate(props.data.population) }}</p>
       </span>
       <span class="info_types">
         <b>Region: </b>
@@ -46,7 +21,7 @@ const populationSeparate = computed(()=>{
       </span>
       <span class="info_types">
         <b>Capital: </b>
-        <p>{{ capitalDefined }}</p>
+        <p>{{ capitalDefined(props.data.capital) }}</p>
       </span>
     </div>
   </RouterLink>
