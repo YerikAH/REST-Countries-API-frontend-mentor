@@ -1,0 +1,10 @@
+:root {
+  --font-primary: "Nunito Sans", sans-serif;
+  --dark-blue: hsl(209, 23%, 22%); /* dark mode elements */
+  --very-dark-blue-bg: hsl(207, 26%, 17%); /* dark mode background */
+  --very-dark-blue-text: hsl(200, 15%, 8%); /* light mode text */
+  --dark-gray: hsl(0, 0%, 52%); /* light mode input */
+  --very-light-gray: hsl(0, 0%, 98%); /* light mode background */
+  --white: hsl(0, 0%, 100%); /* dark mode text and light mode elements */
+  --black-10: #0001;
+}

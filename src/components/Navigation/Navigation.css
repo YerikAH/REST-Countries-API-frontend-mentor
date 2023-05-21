@@ -1,34 +1,7 @@
-<script setup lang="ts">
-import { changeTheme, theme } from '../../../store/store'
-import { IconMoon } from '@tabler/icons-vue'
-import { PathApp } from '../../../enum/enum'
-
-const handleClick = () => {
-  changeTheme()
-}
-
-</script>
-
-<template>
-  <header class="header" :id="theme">
-    <nav class="header_nav">
-      <ul class="nav_ul">
-        <li><RouterLink :to="PathApp.main" tabindex="1" class="ul_link">Where in the world?</RouterLink></li>
-        <li>
-          <button tabindex="1" class="ul_button" @click="handleClick">
-            <IconMoon /> Dark mode
-          </button>
-        </li>
-      </ul>
-    </nav>
-  </header>
-</template>
-
-<style scoped>
 #dark {
   background-color: var(--dark-blue);
 }
-#dark a {
+#dark .ul_link {
   color: var(--white);
 }
 #dark button {
@@ -58,7 +31,7 @@ const handleClick = () => {
   justify-content: space-between;
   align-items: center;
 }
-.nav_ul a {
+.nav_ul .ul_link {
   font: normal normal 800 0.9rem/1.2rem var(--font-primary);
   color: var(--very-dark-blue-text);
 }
@@ -84,11 +57,10 @@ svg {
   .nav_ul button {
     font: normal normal 600 1rem/1.2rem var(--font-primary);
   }
-  .nav_ul a {
+  .nav_ul .ul_link {
     font: normal normal 800 1.5rem/2rem var(--font-primary);
   }
   .header {
     padding: 1.5rem 2rem;
   }
 }
-</style>
