@@ -20,6 +20,7 @@
   position: relative;
   transition: 0.3s;
   transition-timing-function: cubic-bezier(0.48, 0.25, 0.14, 0.91);
+  display: block
 }
 .card_country img {
   width: 100%;
