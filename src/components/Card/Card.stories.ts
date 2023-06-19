@@ -33,6 +33,14 @@ const meta = {
         category: "content",
       },
     },
+    theme: {
+      description: "Theme for the application.",
+      control: "radio",
+      options: ["light", "dark"],
+      table: {
+        category: "Styles",
+      },
+    },
   },
 } satisfies Meta<typeof Card>;
 
@@ -50,6 +58,7 @@ export const Default: Story = {
     population: "Población",
     capital: "Capital",
     region: "Region",
+    theme: "light",
     country: {
       name: {
         common: "Peru",

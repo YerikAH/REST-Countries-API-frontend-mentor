@@ -1,0 +1,19 @@
+#dark {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+.select_country{
+  position: relative;
+  transition: 0.3s;
+  transition-timing-function: cubic-bezier(0.48, 0.25, 0.14, 0.91);
+  display: flex;
+  background-color: var(--white);
+  border: none;
+  justify-content: space-between;
+  align-items: center;
+  font: normal normal 600 0.8rem/1.2rem var(--font-primary);
+  color: var(--very-dark-blue-text);
+  padding: 1rem 1.5rem;
+  gap: 1rem;
+  border-radius: 0.5rem;
+}

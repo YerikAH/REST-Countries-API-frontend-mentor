@@ -1,0 +1,30 @@
+#dark {
+  background-color: var(--dark-blue);
+}
+#dark .option {
+  color: var(--white);
+}
+.filter_options {
+  transition: 0.3s;
+  transition-timing-function: cubic-bezier(0.48, 0.25, 0.14, 0.91);
+  background-color: var(--white);
+  border-radius: 0.2rem;
+  position: absolute;
+  display: grid;
+  width: 100%;
+  max-width: 10rem;
+  left: 0;
+  z-index: 500;
+  padding: 0.5rem 0;
+}
+.option {
+  color: var(--very-dark-blue-text);
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: none;
+  font: normal normal 600 0.8rem/1rem var(--font-primary);
+  transition: 0.3s;
+}
+.option:hover {
+  background-color: var(--black-10);
+}

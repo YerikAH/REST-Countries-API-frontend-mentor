@@ -5,11 +5,12 @@ import { IconSearch } from "@tabler/icons-vue";
 const input = ref("");
 const props = defineProps({
   placeholder: String,
+  theme: String,
 });
 </script>
 
 <template>
-  <div class="search_country">
+  <div class="search_country" :id="props.theme">
     <button class="search_country_button">
       <IconSearch :size="18" color="#848484" />
     </button>

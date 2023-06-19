@@ -1,4 +1,4 @@
-#dark .card_country {
+.card_country {
   background-color: var(--dark-blue);
 }
 #dark .info_name {

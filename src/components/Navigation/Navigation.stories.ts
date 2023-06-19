@@ -23,7 +23,7 @@ const meta = {
     },
     theme: {
       description: "Theme for the application.",
-      control: { type: "text" },
+      control: 'radio', options: ['light', 'dark'] ,
       table: {
         category: "Styles",
       },

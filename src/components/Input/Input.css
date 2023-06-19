@@ -1,10 +1,10 @@
-#dark .search_country {
+#dark {
   background-color: var(--dark-blue);
 }
-#dark .search_country > input {
+#dark input {
   color: var(--white);
 }
-#dark .search_country > input::placeholder {
+#dark input::placeholder {
   color: var(--white);
 }
 #dark .search_country_button {

@@ -1,21 +1,21 @@
 <script setup lang="ts">
 import { populationSeparate, capitalDefined } from "../../helpers/helpers";
 import { Country } from "../../interface/data";
-import {defineProps} from 'vue'
+import { defineProps } from "vue";
 
 const props = defineProps({
   population: String,
   capital: String,
   region: String,
+  theme: String,
   country: {
     type: Object as () => Country,
-    required: true
+    required: true,
   },
 });
-
 </script>
 <template>
-  <RouterLink class="card_country" :to="`/country/${props.country.to}`">
+  <RouterLink class="card_country" :to="`/country/${props.country.to}`" :id="props.theme">
     <img :src="props.country.flags.png" alt="country" />
     <div class="country_info">
       <h5 class="info_name">{{ props.country.name.common }}</h5>

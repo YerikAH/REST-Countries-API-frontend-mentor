@@ -12,6 +12,13 @@ const meta = {
         category: "Content",
       },
     },
+    theme: {
+      description: "Theme for the application.",
+      control: 'radio', options: ['light', 'dark'] ,
+      table: {
+        category: "Styles",
+      },
+    },
   },
 } satisfies Meta<typeof Input>;
 
@@ -27,5 +34,6 @@ export const Default: Story = {
   }),
   args: {
     placeholder: "Search the country...",
+    theme: "light"
   },
 };
