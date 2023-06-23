@@ -36,24 +36,20 @@ export const Default: Story = {
   args: {
     options: [
       {
-        id: 0,
         name: "America",
         word_clave: "America",
       },
       {
-        id: 0,
-        name: "America",
-        word_clave: "America",
+        name: "South America",
+        word_clave: "South America",
       },
       {
-        id: 0,
-        name: "America",
-        word_clave: "America",
+        name: "Europe",
+        word_clave: "Europe",
       },
       {
-        id: 0,
-        name: "America",
-        word_clave: "America",
+        name: "Asia",
+        word_clave: "Asia",
       },
     ],
     theme: "light",

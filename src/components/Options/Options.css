@@ -2,7 +2,11 @@
   background-color: var(--dark-blue);
 }
 #dark .option {
+  background: var(--dark-blue);
   color: var(--white);
+}
+#dark .option:hover, .option:focus{
+  filter: brightness(1.2);
 }
 .filter_options {
   transition: 0.3s;
@@ -20,11 +24,13 @@
 .option {
   color: var(--very-dark-blue-text);
   padding: 0.5rem 1rem;
-  background-color: transparent;
+  background-color: var(--white);
   border: none;
   font: normal normal 600 0.8rem/1rem var(--font-primary);
   transition: 0.3s;
+  outline: none;
 }
-.option:hover {
-  background-color: var(--black-10);
+.option:hover, .option:focus {
+  filter: brightness(0.8);
 }
+

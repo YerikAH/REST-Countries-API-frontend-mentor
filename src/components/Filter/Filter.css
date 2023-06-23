@@ -2,6 +2,9 @@
   background-color: var(--dark-blue);
   color: var(--white);
 }
+#dark:hover, #dark:focus{
+  filter: brightness(1.2);
+}
 .select_country{
   position: relative;
   transition: 0.3s;
@@ -16,4 +19,8 @@
   padding: 1rem 1.5rem;
   gap: 1rem;
   border-radius: 0.5rem;
+  outline: none;
+}
+.select_country:hover, .select_country:focus{
+  filter: brightness(0.8);
 }

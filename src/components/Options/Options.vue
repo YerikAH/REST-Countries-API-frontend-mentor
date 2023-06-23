@@ -11,16 +11,16 @@ const props = defineProps({
 });
 
 const onClick = (option: string) => {
-  $emit("onClick", option);
 };
 </script>
 <template>
   <div class="filter_options" :id="props.theme">
     <button
       class="option"
-      v-for="option in props.options"
-      :key="option.id"
+      v-for="(option, idx) in props.options"
+      :key="idx"
       @click="() => onClick(option.word_clave)"
+      tabindex="1"
     >
       {{ option.name }}
     </button>

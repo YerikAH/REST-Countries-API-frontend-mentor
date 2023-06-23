@@ -6,12 +6,13 @@ const open = ref(false);
 const handleClick = () => (open.value = !open.value);
 
 const props = defineProps({
-  theme: String
+  theme: String,
+  text: String,
 })
 </script>
 <template>
-  <button class="select_country" @click="handleClick" :id="props.theme">
-    <span>Filter by Region</span> <span><IconChevronDown :size="16" /></span>
+  <button class="select_country" @click="handleClick" :id="props.theme" tabindex="1">
+    <span>{{text}}</span> <span><IconChevronDown :size="16" /></span>
   </button>
 </template>
 <style scoped>

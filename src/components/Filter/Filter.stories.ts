@@ -13,6 +13,13 @@ const meta = {
         category: "Styles",
       },
     },
+    text: {
+      description: "Text will be show in the button.",
+      control: "string",
+      table: {
+        category: "Content",
+      },
+    },
   },
 } satisfies Meta<typeof Filter>;
 
@@ -28,5 +35,6 @@ export const Default: Story = {
   }),
   args: {
     theme: "light",
+    text: "Filter by region"
   },
 };
