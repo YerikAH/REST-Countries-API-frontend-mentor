@@ -35,6 +35,10 @@ const meta = {
         category: "Content",
       },
     },
+    onChangeTheme:{
+      description: '',
+      action: 'onChangeTheme'
+    }
   },
 } satisfies Meta<typeof Navigation>;
 export default meta;
@@ -44,7 +48,7 @@ export const Default: Story = {
   render: (args, { argTypes }) => ({
     components: { Navigation },
     props: Object.keys(argTypes),
-    template: /* html */ `<Navigation v-bind="$props"/>`,
+    template: /* html */ `<Navigation v-bind="$props" @on-change-theme="onChangeTheme"/>`,
   }),
 
   args: {

@@ -20,6 +20,7 @@
   gap: 1rem;
   border-radius: 0.5rem;
   outline: none;
+  box-shadow: 0px 1px 10px 2px #0002;
 }
 .select_country:hover, .select_country:focus{
   filter: brightness(0.8);

@@ -12,6 +12,13 @@ const meta = {
         category: "Content",
       },
     },
+    show: {
+      description: "",
+      control: { type: "boolean" },
+      table: {
+        category: "Styles",
+      },
+    },
     theme: {
       description: "Theme for the application.",
       control: "radio",
@@ -20,6 +27,10 @@ const meta = {
         category: "Styles",
       },
     },
+    onSelectOption: {
+      description: '',
+      action: 'onSelectOption'
+    }
   },
 } satisfies Meta<typeof Options>;
 
@@ -31,7 +42,7 @@ export const Default: Story = {
   render: (args, { argTypes }) => ({
     components: { Options },
     props: Object.keys(argTypes),
-    template: /* html */ `<Options v-bind="$props"/>`,
+    template: /* html */ `<Options v-bind="$props" @on-select-option="onSelectOption" />`,
   }),
   args: {
     options: [
@@ -53,5 +64,6 @@ export const Default: Story = {
       },
     ],
     theme: "light",
+    show: true
   },
 };

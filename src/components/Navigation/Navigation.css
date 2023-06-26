@@ -6,10 +6,15 @@
 }
 #dark button {
   color: var(--white);
+  background-color: var(--dark-blue);
 }
 #dark svg {
   fill: var(--white);
   stroke: var(--white);
+}
+#dark button:hover, 
+#dark button:focus {
+  filter: brightness(1.2);
 }
 
 .header {
@@ -38,14 +43,22 @@
 .nav_ul button {
   font: normal normal 600 0.8rem/1.2rem var(--font-primary);
   border: none;
-  background-color: transparent;
+  background-color: var(--white);
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   color: var(--very-dark-blue-text);
+  border-radius: 0.4rem;
+  transition: 0.3s;
+  outline: none;
 }
+.nav_ul button:hover,
+.nav_ul button:focus{
+  filter: brightness(0.8);
+}
+
 svg {
   stroke-width: 1.5;
   stroke: var(--very-dark-blue-text);

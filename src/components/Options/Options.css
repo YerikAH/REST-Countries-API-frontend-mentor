@@ -5,7 +5,10 @@
   background: var(--dark-blue);
   color: var(--white);
 }
-#dark .option:hover, .option:focus{
+#dark .option:hover{
+  filter: brightness(1.2);
+}
+#dark .option:focus{
   filter: brightness(1.2);
 }
 .filter_options {
@@ -19,7 +22,8 @@
   max-width: 10rem;
   left: 0;
   z-index: 500;
-  padding: 0.5rem 0;
+  overflow: hidden;
+  transform-origin: top center;
 }
 .option {
   color: var(--very-dark-blue-text);
@@ -29,8 +33,24 @@
   font: normal normal 600 0.8rem/1rem var(--font-primary);
   transition: 0.3s;
   outline: none;
+  text-align: left;
+}
+.option:first-child{
+  margin-top: 0.5rem;
+}
+.option:last-child{
+  margin-bottom: 0.5rem;
 }
 .option:hover, .option:focus {
   filter: brightness(0.8);
+}
+
+.v-enter-active,
+.v-leave-active {
+  transform: scaleY(1);
+}
+.v-enter-from,
+.v-leave-to {
+  transform: scaleY(0);
 }
 

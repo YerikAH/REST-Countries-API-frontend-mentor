@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { IconMoon } from "@tabler/icons-vue";
+import {defineProps, defineEmits} from 'vue'
 
+const emit = defineEmits(['onChangeTheme'])
 const props = defineProps({
   title: String,
   button: String,
@@ -19,7 +21,7 @@ const props = defineProps({
           }}</RouterLink>
         </li>
         <li>
-          <button tabindex="1" class="ul_button">
+          <button tabindex="1" class="ul_button" @click="emit('onChangeTheme')">
             <IconMoon /> {{ props.button }}
           </button>
         </li>

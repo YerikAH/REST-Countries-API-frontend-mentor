@@ -20,6 +20,10 @@ const meta = {
         category: "Content",
       },
     },
+    onOpenOptions:{
+      description: '',
+      action: 'onOpenOptions'
+    }
   },
 } satisfies Meta<typeof Filter>;
 
@@ -31,7 +35,7 @@ export const Default: Story = {
   render: (args, { argTypes }) => ({
     components: { Filter},
     props: Object.keys(argTypes),
-    template: /* html */ `<Filter v-bind="$props"/>`,
+    template: /* html */ `<Filter v-bind="$props" @on-open-options="onOpenOptions"/>`,
   }),
   args: {
     theme: "light",

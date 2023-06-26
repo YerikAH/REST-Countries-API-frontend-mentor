@@ -19,6 +19,10 @@ const meta = {
         category: "Styles",
       },
     },
+    onInput:{
+      description: '',
+      action: 'onInput'
+    }
   },
 } satisfies Meta<typeof Input>;
 
@@ -30,7 +34,7 @@ export const Default: Story = {
   render: (args, { argTypes }) => ({
     components: { Input },
     props: Object.keys(argTypes),
-    template: /* html */ `<Input v-bind="$props"/>`,
+    template: /* html */ `<Input v-bind="$props" @on-input="onInput"/>`,
   }),
   args: {
     placeholder: "Search the country...",
