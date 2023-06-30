@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { populationSeparate, capitalDefined } from "../../helpers/helpers";
 import { Country } from "../../interface/data";
-import { defineProps } from "vue";
+import { defineProps, ref } from "vue";
+import Loader from '../Loader/Loader.vue'
+
 
 const props = defineProps({
   population: String,
@@ -13,10 +15,14 @@ const props = defineProps({
     required: true,
   },
 });
+
 </script>
 <template>
   <RouterLink class="card_country" :to="`/country/${props.country.to}`" :id="props.theme">
-    <img :src="props.country.flags.png" alt="country" />
+    <div class="card_country__image">
+      <img :src="props.country.flags.png" alt="country" />
+      <div class="card_country__image__loader" />
+    </div>
     <div class="country_info">
       <h5 class="info_name">{{ props.country.name.common }}</h5>
       <span class="info_types">

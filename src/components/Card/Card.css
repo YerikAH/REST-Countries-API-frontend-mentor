@@ -24,8 +24,15 @@
 }
 .card_country img {
   width: 100%;
-  height: 10rem;
+  height: 100%;
   object-fit: cover;
+  position: absolute;
+}
+.card_country__image{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 10rem;
 }
 .country_info {
   padding: 1rem 1rem 2rem 1rem;
@@ -52,4 +59,24 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+.card_country__image__loader{
+  width: 100%;
+  height: 100%;
+  background-color: var(--white);
+  filter: brightness(0.8);
+  animation-name: loader;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+@keyframes loader{
+  0%{
+  filter: brightness(0.9);
+}
+50%{
+  filter: brightness(0.95);
+}
+50%{
+  filter: brightness(0.8);
+}
 }
