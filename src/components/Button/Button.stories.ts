@@ -1,52 +1,72 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-
 import Button from "./Button.vue";
 
-// More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
 const meta = {
-  title: "Example/Button",
+  title: "Home/Button",
   component: Button,
-  // This component will have an automatically generated docsPage entry: https://storybook.js.org/docs/vue/writing-docs/autodocs
-  tags: ["autodocs"],
   argTypes: {
-    size: { control: "select", options: ["small", "medium", "large"] },
-    backgroundColor: { control: "color" },
-    onClick: { action: "clicked" },
+    theme: {
+      description: "Theme for the application.",
+      control: "radio",
+      options: ["light", "dark"],
+      table: {
+        category: "Styles",
+      },
+    },
+    text: {
+      description: "Text will be show in the button.",
+      control: { type: "text" },
+      table: {
+        category: "Content",
+      },
+    },
+    padding: {
+      description: "",
+      control: { type: "text" },
+      table: {
+        category: "Content",
+      },
+    },
+    size: {
+      description: "",
+      control: { type: "text" },
+      table: {
+        category: "Content",
+      },
+    },
+    radius: {
+      description: "",
+      control: { type: "text" },
+      table: {
+        category: "Content",
+      },
+    },
+    click: {
+      description: "",
+      action: "click",
+    },
   },
-  args: { primary: false }, // default value
 } satisfies Meta<typeof Button>;
 
 export default meta;
+
 type Story = StoryObj<typeof meta>;
-/*
- *👇 Render functions are a framework specific feature to allow you control on how the component renders.
- * See https://storybook.js.org/docs/vue/api/csf
- * to learn how to use render functions.
- */
-export const Primary: Story = {
-  args: {
-    primary: true,
-    label: "Button",
-  },
-};
 
-export const Secondary: Story = {
+export const Default: Story = {
+  render: (args, { argTypes }) => ({
+    components: { Button },
+    props: Object.keys(argTypes),
+    template: /* html */ `<Button v-bind="$props" @click="click">
+      <div>
+        <span>{{ text }}</span> 
+      </div>
+    </Button>`,
+  }),
   args: {
-    primary: false,
-    label: "Button",
-  },
-};
-
-export const Large: Story = {
-  args: {
-    label: "Button",
-    size: "large",
-  },
-};
-
-export const Small: Story = {
-  args: {
-    label: "Button",
-    size: "small",
+    theme: "light",
+    text: "France",
+    padding: "0.2rem 1rem",
+    size: "0.8rem",
+    radius: "0.2rem",
   },
 };
