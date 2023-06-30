@@ -7,7 +7,8 @@ const meta = {
   argTypes: {
     theme: {
       description: "Theme for the application.",
-      control: 'radio', options: ['light', 'dark'] ,
+      control: "radio",
+      options: ["light", "dark"],
       table: {
         category: "Styles",
       },
@@ -21,11 +22,11 @@ const meta = {
     },
     styles: {
       description: "",
-      control: 'object',
+      control: "object",
       table: {
         category: "Styles",
       },
-    }
+    },
   },
 } satisfies Meta<typeof Image>;
 
@@ -44,7 +45,7 @@ export const Default: Story = {
     src: "https://images6.alphacoders.com/568/568500.jpg",
     styles: {
       width: "550px",
-      height: "550px"
-    }
+      height: "550px",
+    },
   },
 };

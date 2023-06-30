@@ -3,11 +3,12 @@ import Loader from "./Loader.vue";
 
 const meta = {
   title: "Home/Loader",
-  component:Loader,
+  component: Loader,
   argTypes: {
     theme: {
       description: "Theme for the application.",
-      control: 'radio', options: ['light', 'dark'] ,
+      control: "radio",
+      options: ["light", "dark"],
       table: {
         category: "Styles",
       },
@@ -26,6 +27,6 @@ export const Default: Story = {
     template: /* html */ `<Loader v-bind="$props"/>`,
   }),
   args: {
-    theme: "light"
+    theme: "light",
   },
 };

@@ -1,5 +1,6 @@
 <script setup>
 import { defineProps, ref, onMounted, watch } from "vue";
+import Loader from '../Loader/Loader.vue'
 
 const image = ref(null);
 const loadImage = ref(true);
@@ -25,17 +26,16 @@ const onToggleImage = () => {
   loadImage.value = false;
   style.value = "";
 };
-
 </script>
 <template>
-  <div class="container" :id="theme" :style="props.styles">
+  <div :style="props.styles">
     <img
       :class="`image ${style}`"
       ref="image"
       alt="image"
       @load="onToggleImage"
     />
-    <div class="loader" v-if="loadImage"/>
+    <Loader :theme="props.theme" v-if="loadImage"/>
   </div>
 </template>
 <style scoped>
