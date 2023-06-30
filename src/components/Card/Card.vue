@@ -2,8 +2,7 @@
 import { populationSeparate, capitalDefined } from "../../helpers/helpers";
 import { Country } from "../../interface/data";
 import { defineProps, ref } from "vue";
-import Loader from '../Loader/Loader.vue'
-
+import Image from "../Image/Image.vue";
 
 const props = defineProps({
   population: String,
@@ -15,13 +14,19 @@ const props = defineProps({
     required: true,
   },
 });
-
 </script>
 <template>
-  <RouterLink class="card_country" :to="`/country/${props.country.to}`" :id="props.theme">
+  <RouterLink
+    class="card_country"
+    :to="`/country/${props.country.to}`"
+    :id="props.theme"
+  >
     <div class="card_country__image">
-      <img :src="props.country.flags.png" alt="country" />
-      <div class="card_country__image__loader" />
+      <Image
+        :styles="{ width: '100%', height: '100%' }"
+        :theme="props.theme"
+        :src="props.country.flags.png"
+      />
     </div>
     <div class="country_info">
       <h5 class="info_name">{{ props.country.name.common }}</h5>

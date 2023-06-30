@@ -55,9 +55,9 @@ export const Default: Story = {
     template: /* html */ `<Card v-bind="$props"/>`,
   }),
   args: {
-    population: "Población",
-    capital: "Capital",
-    region: "Region",
+    population: "Población:",
+    capital: "Capital:",
+    region: "Region:",
     theme: "light",
     country: {
       name: {
