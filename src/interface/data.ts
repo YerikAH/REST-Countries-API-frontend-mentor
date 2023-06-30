@@ -300,3 +300,8 @@ export enum Status {
   OfficiallyAssigned = 'officially-assigned',
   UserAssigned = 'user-assigned'
 }
+
+export interface ErrorCountry{
+  status: number,
+  message: String
+}
