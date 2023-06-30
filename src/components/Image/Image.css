@@ -1,13 +1,3 @@
-#dark .loader{
-  background-color: var(--dark-blue);
-  animation-name: loaderDark;
-  filter: brightness(1.4);
-}
-
-.container{
-  width: 250px;
-  height: 250px;
-}
 .image {
   object-fit: cover;
   width: 100%;
@@ -18,34 +8,4 @@
   visibility: hidden;
   height: 0;
 }
-.loader {
-  width: 100%;
-  height: 100%;
-  background-color: var(--white);
-  filter: brightness(0.8);
-  animation-name: loader;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-}
-@keyframes loader {
-  0% {
-    filter: brightness(0.9);
-  }
-  50% {
-    filter: brightness(0.95);
-  }
-  100% {
-    filter: brightness(0.8);
-  }
-}
-@keyframes loaderDark {
-  0% {
-    filter: brightness(1.2);
-  }
-  50% {
-    filter: brightness(1.5);
-  }
-  100% {
-    filter: brightness(1.4);
-  }
-}
+

@@ -8,6 +8,7 @@ const style = ref("");
 const props = defineProps({
   theme: String,
   src: String,
+  styles: Object
 });
 watch(
   () => props.src,
@@ -24,9 +25,10 @@ const onToggleImage = () => {
   loadImage.value = false;
   style.value = "";
 };
+
 </script>
 <template>
-  <div class="container" :id="theme">
+  <div class="container" :id="theme" :style="props.styles">
     <img
       :class="`image ${style}`"
       ref="image"

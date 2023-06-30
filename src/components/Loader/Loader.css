@@ -1,23 +1,36 @@
-#dark{
-  border-top: 3px solid var(--white);
-  background-color: transparent;
+#dark {
+  background-color: var(--dark-blue);
+  animation-name: loaderDark;
+  filter: brightness(1.4);
 }
 .loader {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: inline-block;
-  border-top: 3px solid var(--dark-blue);
-  border-right: 3px solid transparent;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
+  width: 100%;
+  height: 100%;
+  background-color: var(--white);
+  filter: brightness(0.8);
+  animation-name: loader;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
 }
-
-@keyframes rotation {
+@keyframes loader {
   0% {
-    transform: rotate(0deg);
+    filter: brightness(0.9);
+  }
+  50% {
+    filter: brightness(0.95);
   }
   100% {
-    transform: rotate(360deg);
+    filter: brightness(0.8);
   }
-} 
+}
+@keyframes loaderDark {
+  0% {
+    filter: brightness(1.2);
+  }
+  50% {
+    filter: brightness(1.5);
+  }
+  100% {
+    filter: brightness(1.4);
+  }
+}

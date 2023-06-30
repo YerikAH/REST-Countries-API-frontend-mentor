@@ -5,8 +5,8 @@ const props = defineProps({
 })
 </script>
 <template>
-    <span class="loader" :id="props.theme"></span>
+  <div class="loader" :id="props.theme"/>
 </template>
 <style scoped>
-@import url("./Loader.css")
+@import url("./Loader.css");
 </style>

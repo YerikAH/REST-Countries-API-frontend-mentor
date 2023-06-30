@@ -19,6 +19,13 @@ const meta = {
         category: "Content",
       },
     },
+    styles: {
+      description: "",
+      control: 'object',
+      table: {
+        category: "Styles",
+      },
+    }
   },
 } satisfies Meta<typeof Image>;
 
@@ -34,6 +41,10 @@ export const Default: Story = {
   }),
   args: {
     theme: "light",
-    src: "https://images6.alphacoders.com/568/568500.jpg"
+    src: "https://images6.alphacoders.com/568/568500.jpg",
+    styles: {
+      width: "550px",
+      height: "550px"
+    }
   },
 };
