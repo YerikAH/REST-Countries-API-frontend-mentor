@@ -13,13 +13,6 @@ const meta = {
         category: "Styles",
       },
     },
-    text: {
-      description: "Text will be show in the button.",
-      control: { type: "text" },
-      table: {
-        category: "Content",
-      },
-    },
     padding: {
       description: "",
       control: { type: "text" },
@@ -58,13 +51,12 @@ export const Default: Story = {
     props: Object.keys(argTypes),
     template: /* html */ `<Button v-bind="$props" @click="click">
       <div>
-        <span>{{ text }}</span> 
+        France
       </div>
     </Button>`,
   }),
   args: {
     theme: "light",
-    text: "France",
     padding: "0.2rem 1rem",
     size: "0.8rem",
     radius: "0.2rem",

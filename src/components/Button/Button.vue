@@ -6,7 +6,6 @@ const emit = defineEmits(["click"]);
 
 const props = defineProps({
   theme: String,
-  text: String,
   padding: String,
   radius: String,
   size: String,
