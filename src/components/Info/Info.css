@@ -9,7 +9,6 @@
 }
 .detail_country_two {
   width: 100%;
-  overflow: hidden;
   position: relative;
   transition: 0.3s;
   transition-timing-function: cubic-bezier(0.48, 0.25, 0.14, 0.91);

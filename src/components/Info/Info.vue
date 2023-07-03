@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps } from "vue";
+import { defineProps, ref, onMounted } from "vue";
 import {
   populationSeparate,
   arrayToString,
@@ -8,6 +8,10 @@ import {
   getNameByCode
 } from "../../helpers/helpers";
 import { Country } from "../../interface/data";
+import { searchByCode } from '../../services/services'
+import Button from '../Button/Button.vue'
+
+const nameCountry = ref([])
 
 const props = defineProps({
   theme: String,
@@ -25,6 +29,28 @@ const props = defineProps({
     required: true,
   },
 });
+
+const getNameByCode = async (country: string[]) => {
+  for (let i = 0; i < country.length; i++) {
+    const element = country[i];
+    try {
+      const res = await searchByCode(element) as Country
+      nameCountry.value.push(res.name.common)
+      console.log(nameCountry.value)
+    } catch (err) {
+      return err 
+    }
+  } 
+};
+
+onMounted(() => {
+  getNameByCode(props.country.borders)
+})
+
+function getCountry(country: string ) {
+  console.log(country)
+}
+
 </script>
 <template>
   <div class="detail_country_two" :id="props.theme">
@@ -69,7 +95,9 @@ const props = defineProps({
     </div>
     <div class="detail_country_two_boxflex">
       <p>{{ props.borderCountries }}</p>
-      <div class="box_flex_buttons">{{ getNameByCode(props.country.borders)}}</div>
+      <div class="box_flex_buttons">
+        <Button v-for="(country, idx) in nameCountry" :theme="props.theme" :key="idx" padding="0.2rem 1rem" size="0.8rem" radius="0.2rem" @click="() => getCountry(country)">{{ country }}</Button>
+      </div>
     </div>
   </div>
 </template>

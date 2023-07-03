@@ -32,31 +32,10 @@ const getNameMoney = (data: object) => {
   }
   return money.join(", ");
 };
-const getNameByCode = async (country: string[]) => {
-  return new Promise<string[]>((resolve) => {
-    let data: string[] = [];
-    const processNextCountry = async (index: number) => {
-      if (index < country.length) {
-        const element = country[index];
-        await searchByCode(element).then((res) => {
-          const countryData = res as Country;
-          data.push(countryData.name.common);
-          console.log(data)
-          processNextCountry(index + 1);
-        });
-      } else {
-        resolve(data);
-      }
-    };
-
-    processNextCountry(0);
-  });
-};
 
 export {
   populationSeparate,
   arrayToString,
   objectToString,
   getNameMoney,
-  getNameByCode,
 };
