@@ -36,7 +36,6 @@ const getNameByCode = async (country: string[]) => {
     try {
       const res = await searchByCode(element) as Country
       nameCountry.value.push(res.name.common)
-      console.log(nameCountry.value)
     } catch (err) {
       return err 
     }
@@ -95,9 +94,7 @@ function getCountry(country: string ) {
     </div>
     <div class="detail_country_two_boxflex">
       <p>{{ props.borderCountries }}</p>
-      <div class="box_flex_buttons">
-        <Button v-for="(country, idx) in nameCountry" :theme="props.theme" :key="idx" padding="0.2rem 1rem" size="0.8rem" radius="0.2rem" @click="() => getCountry(country)">{{ country }}</Button>
-      </div>
+      <Button v-for="(country, idx) in nameCountry" :theme="props.theme" :key="idx" padding="0.3rem 1.8rem" radius="0.2rem" @click="() => getCountry(country)">{{ country }}</Button>
     </div>
   </div>
 </template>
