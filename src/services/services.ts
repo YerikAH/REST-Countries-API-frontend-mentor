@@ -12,4 +12,14 @@ const searchByCode = async (code: string): Promise<Country | ErrorCountry> => {
   }
 };
 
-export { searchByCode };
+const getCountry = async () => {
+  try {
+    const res = await fetch(`${API_URL}`);
+    const json = await res.json();
+    return json;
+  } catch (err) {
+    return err as ErrorCountry;
+  }
+}
+
+export { searchByCode, getCountry };
